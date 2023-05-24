@@ -3,7 +3,7 @@
 Here you can see the many interesting things I do in my free time.
 
 - 🌱 I’m currently learning Go, C, C++, Cloud Native
-- 🛠️ I'm used to using Java, Go, Python, NodeJS, Vue, Docker and in both backend and frontend development.
+- 👨🏻‍💻 I'm accustomed to using Java, Go, Python, NodeJS, Vue, Docker
 - 🕰 I'm also try to use C, C++, Rust and Dart (for Flutter) at other times
 - 🔭 I’m currently working on the development of [Steam Original Soundtrack Player](https://github.com/skye-z/steam-ost-player).
 - 💬 Ask me about Java, Go, NodeJS, Cloud Native, Docker
