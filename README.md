@@ -14,7 +14,7 @@ Outside of Github, I work in the medical industry and enjoy pure music and singl
 
 <a href="https://github.com/skye-z">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=skye-z&show_icons=true&hide=contribs" />
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=skye-z&layout=compact" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=skye-z&hide=javascript,css&layout=compact" />
 </a>
 <br/>
 <br/>
