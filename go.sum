@@ -1,0 +1,13 @@
+github.com/FortAwesome/Font-Awesome v0.0.0-20210316185733-d79d85c3fad8 h1:3h1ZlZmKNqZtiTD6FF7GijnIB/PU9/jR+dclHF80pFE=
+github.com/FortAwesome/Font-Awesome v0.0.0-20210316185733-d79d85c3fad8/go.mod h1:IUgezN/MFpCDIlFezw3L8j83oeiIuYoj28Miwr/KUYo=
+github.com/aFarkas/lazysizes v0.0.0-20210408151554-27c7ceb7d737/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
+github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579 h1:K8ukOfj0MOBEWWsL8Mzd8GXIbAf7/RHnX1hipqbjeto=
+github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
+github.com/hugo-mods/icons v0.0.0-20220508080705-d938a1900b1c h1:BHTy85KaX2uQnC+1i5NRVAxiJNOwpIwQXlY/zpLD6zA=
+github.com/hugo-mods/icons v0.0.0-20220508080705-d938a1900b1c/go.mod h1:sPodUyqumOYz75PKIwmqOYZXLIcLAujn7V9+1Hk4VW8=
+github.com/hugo-mods/lazyimg v0.0.0-20220925161121-72183e14a364 h1:D6wkkO/MtNX597ihy0eS0+KhtjQz5B6c6YBgnXAczcc=
+github.com/hugo-mods/lazyimg v0.0.0-20220925161121-72183e14a364/go.mod h1:mUw/5rIlzxiJfDnKsFnZAITZ29I7n3QeDd8WwGsBmTI=
+github.com/hugo-mods/release-notify v0.0.0-20211204191115-572031cb0d70 h1:oBpbA4hg5pzyjkFX1SmbqueOq6YR1qjhUiRCr1uLMzs=
+github.com/hugo-mods/release-notify v0.0.0-20211204191115-572031cb0d70/go.mod h1:RYv2eTG8LmJsxnEajLP4wkOLK3GDmwNterXVWgW6DYA=
+github.com/kdevo/osprey-delight/v5 v5.0.6 h1:UNAJWyWaKOFGQC6AdMwWQT0KPzmPnlTY/6dVwTnUdek=
+github.com/kdevo/osprey-delight/v5 v5.0.6/go.mod h1:VUG2wTkPzpOET3vq1qlHBPwMjPy1zg5dPlgjf4aGqcw=
