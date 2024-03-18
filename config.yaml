@@ -1,4 +1,4 @@
-title: "Osprey Delight Demo"
+title: "BetaX Dev"
 baseURL: "https://betax.dev"
 languageCode: "zh-CN"
 theme: "github.com/kdevo/osprey-delight/v5"
@@ -19,36 +19,36 @@ module:
 ## Generic theme parameters:
 Params:
   author:
-    name: "kdevo"
-  description: "Osprey Delight: Example Site"
+    name: "skey-z"
+  description: "i am skye zhang"
 
   # logoBig appears at the top of the page. Use a path relative to the assets dir for auto-resizing. 
-  logoBig: "osprey-delight.png"
+  logoBig: "logo-big.png"
 
   # logoSmall is the logo that will be shown in the left corner of the nav bar.
   #   Use a path relative to the assets dir for auto-resizing.
-  logoSmall: "favicon.png"
+  # logoSmall: "logo-small.png"
   
   # background can optionally be specified as an image layer behind logoBig at the top of the page (parallax effect).
-  #background: "background.jpg"
+  background: "background.jpg"
   
   # opengraphImage specifies the image that is shown when previewing the site in a messenger or Google Search.
-  opengraphImage: "/images/osprey-delight.png"
+  opengraphImage: "/images/logo-big.png"
 
   # favicon of the site (e.g. smaller version of logoSmall).
-  favicon: "favicon.png"
+  favicon: "logo-small.png"
 
   # theme your site by choosing one of the themes under assets/sass/themes:
   #   - delight is the light version of osprey-delight
   #   - dedark is the dark version of "delight"
   #   - origin is the legacy version (similar to https://github.com/tomanistor/osprey)
-  theme: "delight"
+  theme: "dedark"
 
   # tagline (followed by a cursor) is shown at the top, below the logo
   #tagline: "Welcome!"
   # mdTagline can be used instead to specify the tagline in Markdown for more customizability.
   #   Note that {cursor} is a placeholder and will be replaced by the actual cursor HTML when rendering.
-  mdTagline: "# Welcome!\n ## This is Osprey Delight{cursor}"
+  mdTagline: "# Hi there 👋\n ## I am Skye Zhang{cursor}"
 
   # enforceSinglePage will enforce redirection to the baseURL for all sub-directories/-pages.
   #   Example: If you create about.md, Hugo will also create a '/about/index.html' which might not be what you want for a *single* page site. 
@@ -65,18 +65,8 @@ Params:
 ##   The type specifies the icon to use. For more information, see: 
 ##   https://github.com/kdevo/osprey-delight/blob/dev/CUSTOMIZING.md#icons
   Social:
-  - type: twitter # references the icon to use
-    url: ""
-  - type: linkedin 
-    url: ""
   - type: github
     url: "https://github.com/skye-z"
-  - type: heart
-    url: "https://github.com/sponsors/kdevo"
-  - type: stackoverflow  
-    url: ""
-  - type: spotify
-    url: https://open.spotify.com/artist/5NhBOdJh6T1tgtM5Au1Opl
 
 ## Additional theme features:
   Feat:
@@ -134,27 +124,11 @@ Params:
 ##   See: https://gohugo.io/content-management/menus/#add-content-to-menus
 Menu:
   Main:
-    - name: "About"
-      # identifier controls the section type (and therewith the appearence).
+    - name: "关于"
       identifier: about 
-      # url must be an anchor, for smooth scrolling to it when clicking on the menu item.
       url: "/#about"
-      # weight controls the order of the menu items.
       weight: 1
-    - name: "Work"
+    - name: "项目"
       identifier: gallery
       url: "/#work"
       weight: 2
-    - name: "Blog"
-      identifier: blog
-      url: "/#blog"
-      weight: 3
-    - name: "Contact"
-      identifier: contact
-      url: "/#contact"
-      weight: 4
-    # - name: ""
-    #   # pre makes it possible to use arbitrary HTML before the name, e.g. referencing icons here is possible:
-    #   pre: '<svg class="icon"><use xlink:href="#icon-external"/></svg>&nbsp;'
-    #   url: "https://pyotek.dev"
-    #   weight: 5

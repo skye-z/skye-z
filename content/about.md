@@ -1,11 +1,19 @@
 +++
-title = "About"
-date = "2017-06-27T17:39:21-07:00"
+title = "关于我"
+date = "2024-03-16T18:53:21+08:00"
 draft = false
 +++
 
-Osprey Delight is the free-minded artist's choice for a clutter-free and fast single-page portfolio. 
+我是一名全栈工程师, 目前主要使用
 
-It tastes a bit different than [the original great Osprey theme](https://github.com/tomanistor/osprey) and adds awesome new functionality to your Delight.
+Java、Go、C++、Python、NodeJS、Vue
 
-It's perfectly suited to show off your awesome work! {{< icon "rocket" >}}
+除此之外偶尔也会尝试使用
+
+C、Rust、Dart
+
+我喜欢开发一些提高效率或有趣的东西
+
+在开发之外我热爱纯音乐和单机游戏
+
+Don't postpone joy！🤟
