@@ -10,4 +10,4 @@ buttons:
     url: "https://github.com/skye-z/olympus"
 ---
 
-Olympus 是一个支持多种包管理器的私有制品中转仓库, 提供中央仓库代理加速与私有制品分发服务.
+Olympus 是一个支持多种包管理器, 允许私有化部署的制品代理加速仓库, 提供代理加速与缓存服务.
