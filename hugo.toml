@@ -1,0 +1,13 @@
+baseURL = "https://betax.dev/"
+languageCode = "zh-CN"
+title = "BetaX Dev Team"
+theme = []
+
+[params]
+  description = "BetaX Dev Team - 开源 & 创新"
+  author = "Skye"
+  email = "skai-zhang@hotmail.com"
+  
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

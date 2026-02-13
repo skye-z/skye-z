@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div class="canvas">
+        <div class="corner-mark tl"></div>
+        <div class="corner-mark tr"></div>
+        <div class="corner-mark bl"></div>
+        <div class="corner-mark br"></div>
+
+        <header>
+            <div class="brand-block">
+                <div>
+                    <h3 style="margin-bottom: 0;">BetaX Dev Team</h3>
+                </div>
+            </div>
+        </header>
+
+        {{ block "main" . }}{{ end }}
+
+        <footer>
+            <div>© 2017 - {{ now.Year }} BETAX DEV TEAM. ALL RIGHTS RESERVED.</div>
+            <div>MADE BY SKYE IN SHENZHEN, CHINA</div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="hero-statement">
+        <div>
+            <p class="serif-accent" style="margin-bottom: 1rem; opacity: 0.7;">开源 & 创新</p>
+            <h1 class="hero-title">Simple<br />Beautiful<br />Open</h1>
+        </div>
+        <div class="hero-subtitle">
+            - 结合代码与视觉之美
+        </div>
+    </div>
+
+    <nav class="vertical-nav">
+        <a href="#products" class="nav-strip">
+            <span class="nav-text">项目</span>
+        </a>
+        <a href="#commercial" class="nav-strip">
+            <span class="nav-text">服务</span>
+        </a>
+        <a href="#about" class="nav-strip">
+            <span class="nav-text">关于</span>
+        </a>
+    </nav>
+</section>
+
+<div class="grid-header">
+    <span>项目</span>
+    <span>[SCROLL_DOWN]</span>
+</div>
+
+<section class="projects" id="products">
+    {{ range sort (where .Site.RegularPages "Section" "projects") "Params.id" "asc" }}
+    <div class="project-card">
+        <div class="project-meta">
+            <span>ID: {{ .Params.id }}</span>
+            <span>{{ .Params.license }}</span>
+        </div>
+        <div>
+            <h2 class="project-title">{{ .Title }}</h2>
+            <p class="project-desc serif-accent">{{ .Params.desc_zh }}</p>
+        </div>
+        <div class="project-status">
+        {{ if .Params.status }}
+            <div class="status-dot"></div> {{ .Params.status }}
+        {{ end }}
+        </div>
+        <div class="project-actions">
+            {{ if .Params.project_url }}
+            <a href="{{ .Params.project_url }}" target="_blank" class="project-btn">打开</a>
+            {{ end }}
+            {{ if .Params.link }}
+            <a href="https://github.com/skye-z/{{ .Params.link }}" target="_blank" class="project-btn">GitHub</a>
+            <a href="{{ .Permalink }}" class="project-btn">详情</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</section>
+
+<section class="commercial" id="commercial">
+    <div class="comm-info">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">商业支持</h2>
+        <p style="margin-bottom: 2rem;" class="serif-accent">
+            我们大部分项目是开源免费的<br/>但同时我们也提供"实施部署"、"定制开发"、"优先支持"等服务<br/>以及部分开源协议受限的产品商业化使用授权.
+        </p>
+        <a href="mailto:{{ .Site.Params.email }}" style="border: 1px solid var(--ink); display: inline-block; padding: 1rem;margin-right: 20px; text-decoration: none; color: var(--ink);">联系我们</a>
+        <a href="https://github.com/sponsors/skye-z" target="_blank" style="border: 1px solid var(--ink); display: inline-block; padding: 1rem; text-decoration: none; color: var(--ink);">通过 GitHub 赞助</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-info">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">关于</h2>
+        <p style="max-width: 400px; margin-bottom: 2rem;line-height: 2rem;" class="serif-accent">
+            BetaX Dev Team 是一个专注于工具型产品开发的个人工作室.<br/>我们相信优秀的工具应该是简单、高效且易于使用的.
+        </p>
+        <p style="max-width: 400px; margin-bottom: 2rem;line-height: 2rem;" class="serif-accent">
+            Skye 是一名全栈工程师<br/>主要使用 Java、Go、C++、Python、TS、Vue<br/>除此之外偶尔也用用 C、Rust、Dart.
+        </p>
+    </div>
+    <div class="about-links">
+        <a href="https://github.com/skye-z" target="_blank" class="about-row">
+            <span class="serif-accent">GitHub</span>
+            <span class="arrow">↗</span>
+        </a>
+        <div class="about-row" onclick="copyEmail()">
+            <span class="serif-accent">Email</span>
+            <span class="arrow">↗</span>
+        </div>
+    </div>
+</section>
+
+<script>
+function copyEmail() {
+    const email = 'skai-zhang@hotmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        alert('邮箱已复制: ' + email);
+    }).catch(() => {
+        alert('复制失败');
+    });
+}
+</script>
+{{ end }}

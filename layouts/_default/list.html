@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="projects-list">
+    <h1>{{ .Title }}</h1>
+    <div class="projects-grid">
+        {{ range where .Site.RegularPages "Section" "projects" }}
+        <div class="project-card">
+            <div class="project-meta">
+                <span>ID: {{ .Params.id }}</span>
+                <span>{{ .Params.license }}</span>
+            </div>
+            <div>
+                <h2 class="project-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <p class="project-desc serif-accent">{{ .Params.desc_zh }}</p>
+            </div>
+            <div class="project-status">
+                <div class="status-dot"></div> {{ .Params.status }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

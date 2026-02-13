@@ -1,0 +1,191 @@
+{{ define "main" }}
+<section class="project-detail">
+    <div class="project-header">
+        <div class="project-meta">
+            <span>ID: {{ .Params.id }}</span>
+            <span>{{ .Params.license }}</span>
+            {{ if .Params.link }}
+            <span class="github-stars" data-repo="skye-z/{{ .Params.link }}">
+                <span class="star-count">...</span> stars
+            </span>
+            {{ end }}
+        </div>
+        <h1 class="project-title" style="font-size: 4rem;">{{ .Title }}</h1>
+        <div class="project-status">
+        {{ if .Params.status }}
+            <div class="status-dot"></div> {{ .Params.status }}
+        {{ end }}
+        </div>
+    </div>
+
+    <div class="project-content">
+        {{ if .Params.desc_en }}
+        <p class="project-desc-en">{{ .Params.desc_en }}</p>
+        {{ end }}
+        <p class="project-desc-zh serif-accent">{{ .Params.desc_zh }}</p>
+    </div>
+
+    <div class="project-actions">
+        {{ if .Params.project_url }}
+        <a href="{{ .Params.project_url }}" target="_blank" class="project-btn">打开项目</a>
+        {{ end }}
+        {{ if .Params.link }}
+        <a href="https://github.com/skye-z/{{ .Params.link }}" target="_blank" class="project-btn">查看 GitHub</a>
+        {{ end }}
+        <a href="/" class="project-btn">返回首页</a>
+    </div>
+
+    <div class="project-body" id="readme-content">
+        {{ if .Params.link }}
+        <div class="readme-loading">正在加载 README...</div>
+        {{ else }}
+        {{ .Content }}
+        {{ end }}
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+{{ if .Params.link }}
+<script>
+marked.setOptions({
+    gfm: true,
+    breaks: true
+});
+
+const repo = 'skye-z/{{ .Params.link }}';
+
+fetch('https://api.github.com/repos/' + repo)
+    .then(res => res.json())
+    .then(data => {
+        if (data.stargazers_count !== undefined) {
+            document.querySelectorAll('.star-count').forEach(el => {
+                el.textContent = data.stargazers_count;
+            });
+        }
+    })
+    .catch(() => {});
+
+fetch('https://raw.githubusercontent.com/' + repo + '/main/README.md')
+    .then(res => res.text())
+    .then(text => {
+        const container = document.getElementById('readme-content');
+        container.innerHTML = marked.parse(text);
+        
+        // 修复列表缩进
+        container.querySelectorAll('ul, ol').forEach(list => {
+            list.style.margin = '0.5rem 0';
+            list.style.paddingLeft = '1.5rem';
+        });
+        container.querySelectorAll('li').forEach(li => {
+            li.style.marginBottom = '0.25rem';
+            li.style.lineHeight = '1.6';
+        });
+    })
+    .catch(() => {
+        document.getElementById('readme-content').innerHTML = 
+            '<div class="readme-loading">无法加载 README，请访问 GitHub 查看</div>{{ .Content | safeHTML }}';
+    });
+</script>
+
+<style>
+.markdown-body {
+    line-height: 1.8;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+    margin: 1.5rem 0 1rem;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+}
+.markdown-body h1 { font-size: 2rem; }
+.markdown-body h2 { font-size: 1.5rem; }
+.markdown-body h3 { font-size: 1.25rem; }
+.markdown-body p {
+    margin-bottom: 1rem;
+}
+.markdown-body ul, .markdown-body ol {
+    margin: 0.5rem 0 !important;
+    padding-left: 1.5rem !important;
+}
+.markdown-body li {
+    margin-bottom: 0.25rem !important;
+    line-height: 1.6 !important;
+    list-style-type: inherit !important;
+}
+.markdown-body li ul, .markdown-body li ol {
+    margin: 0.25rem 0 !important;
+}
+.markdown-body li p {
+    margin: 0 !important;
+}
+.markdown-body blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--ink);
+    background: rgba(10, 10, 10, 0.05);
+}
+.markdown-body blockquote p {
+    margin-bottom: 0;
+}
+.markdown-body pre {
+    background: rgba(10, 10, 10, 0.1);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--ink);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.markdown-body code {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+}
+.markdown-body p code {
+    background: rgba(10, 10, 10, 0.1);
+    padding: 0.2rem 0.4rem;
+}
+.markdown-body a {
+    color: var(--ink);
+    text-decoration: underline;
+}
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+}
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+.markdown-body th, .markdown-body td {
+    border: 1px solid var(--ink);
+    padding: 0.5rem;
+    text-align: left;
+}
+.markdown-body th {
+    background: rgba(10, 10, 10, 0.1);
+}
+.markdown-body hr {
+    border: none;
+    border-top: 1px solid var(--ink);
+    margin: 2rem 0;
+}
+.markdown-body .task-list-item {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 1.5rem !important;
+}
+.markdown-body .task-list-item input[type="checkbox"] {
+    margin-right: 0.5rem !important;
+}
+.markdown-body .task-list-item > ul, 
+.markdown-body .task-list-item > ol {
+    padding-left: 1.5rem !important;
+}
+.markdown-body .task-list-item li {
+    list-style: inherit !important;
+}
+</style>
+{{ end }}
+{{ end }}
